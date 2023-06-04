@@ -1,4 +1,4 @@
-const resultHit = hit => `<a class="result-hit">
+const resultHit = (hit, { html, components, sendEvent }) => html`<div class="result-hit">
   <div class="result-hit__image-container">
     <img class="result-hit__image" src="${hit.image}" />
   </div>
@@ -7,9 +7,9 @@ const resultHit = hit => `<a class="result-hit">
     <p class="result-hit__price">$${hit.price}</p>
   </div>
   <div class="result-hit__controls">
-    <button id="view-item" class="result-hit__view">View</button>
-    <button id="add-to-cart" class="result-hit__cart">Add To Cart</button>
+    <button id="view-item" class="result-hit__view" onclick=${() => sendEvent('click', hit, 'Product Viewed')}>View</button>
+    <button id="add-to-cart" class="result-hit__cart" onclick=${() => sendEvent('conversion', hit, 'Added to Cart')}>Add To Cart</button>
   </div>
-</a>`;
+</div>`;
 
 export default resultHit;

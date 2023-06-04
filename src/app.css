@@ -101,9 +101,9 @@
   font-size: inherit;
 }
 
-.result-hit > * {
+/* .result-hit > * {
   pointer-events: none
-}
+} */
 
 #searchbox {
   margin-bottom: 2rem;
